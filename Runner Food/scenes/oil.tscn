@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/oil.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Particles/smoke.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 848.344
+
+[node name="oil" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+modulate = Color( 0.828125, 0.164978, 0.164978, 1 )
+position = Vector2( 0, -2.88445 )
+scale = Vector2( 19.2607, 0.742713 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 1.61764e-005, -4.46864 )
+rotation = 1.5708
+scale = Vector2( 1.34374, 0.945837 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="." to="." method="_on_oil_body_entered"]
+
+

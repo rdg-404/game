@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/speed_power_up.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Items/pixil-frame-0 (7).png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 64.2505
+
+[node name="speed_power_up" type="Area2D"]
+
+position = Vector2( 1630.61, 912.427 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+time = 10.0
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 3.5813, -2.55072 )
+scale = Vector2( 2.01776, 1.95932 )
+texture = ExtResource( 2 )
+
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_speed_power_up_body_entered"]
+
+

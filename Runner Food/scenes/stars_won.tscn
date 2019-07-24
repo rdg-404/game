@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/stars_won.gd" type="Script" id=1]
+[ext_resource path="res://scenes/star.tscn" type="PackedScene" id=2]
+
+[node name="stars_won" type="Node2D" index="0"]
+
+position = Vector2( 960, 407.997 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="star" parent="." index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="star2" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -140, 50 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="star3" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 140, 50 )
+_sections_unfolded = [ "Transform" ]
+
+
